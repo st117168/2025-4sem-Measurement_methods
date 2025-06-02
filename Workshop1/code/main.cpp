@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <clocale>
 
-// Функции для вычислений
+// Р¤СѓРЅРєС†РёРё РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёР№
 double avarage(const std::vector<double>& data)
 {
     double sum = 0.0;
@@ -64,7 +64,7 @@ int main()
 
     if (!file.is_open())
     {
-        std::cerr << "ошибка открытия файла" << std::endl;
+        std::cerr << "РѕС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°" << std::endl;
         return 1;
     }
 
@@ -80,12 +80,12 @@ int main()
 
     file.close();
 
-    // Вычисление среднего значения
+    // Р’С‹С‡РёСЃР»РµРЅРёРµ СЃСЂРµРґРЅРµРіРѕ Р·РЅР°С‡РµРЅРёСЏ
     double mean = avarage(values);
-    std::cout << "Среднее значение (грубые): " << mean << std::endl;
+    std::cout << "РЎСЂРµРґРЅРµРµ Р·РЅР°С‡РµРЅРёРµ (РіСЂСѓР±С‹Рµ): " << mean << std::endl;
 
-    // Вычисление отклонений от среднего для каждого значения
-    std::cout << "Отклонения от среднего: " << std::endl;
+    // Р’С‹С‡РёСЃР»РµРЅРёРµ РѕС‚РєР»РѕРЅРµРЅРёР№ РѕС‚ СЃСЂРµРґРЅРµРіРѕ РґР»СЏ РєР°Р¶РґРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ
+    std::cout << "РћС‚РєР»РѕРЅРµРЅРёСЏ РѕС‚ СЃСЂРµРґРЅРµРіРѕ: " << std::endl;
 
     std::vector<double> ar1 = randomDeviation(values, mean);
 
@@ -95,9 +95,9 @@ int main()
     }
     std::cout << std::endl;
 
-    // Вычисление стандартного отклонения
+    // Р’С‹С‡РёСЃР»РµРЅРёРµ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ РѕС‚РєР»РѕРЅРµРЅРёСЏ
 
-    std::cout << "Стандартное отклонение: " << std::endl;
+    std::cout << "РЎС‚Р°РЅРґР°СЂС‚РЅРѕРµ РѕС‚РєР»РѕРЅРµРЅРёРµ: " << std::endl;
 
     std::vector<double> ar2 = standartDeviation(ar1);
     for (int i = 0; i < ar2.size(); i++)
@@ -106,14 +106,14 @@ int main()
     }
     std::cout << std::endl;
 
-    // Вычисление средней погрешности прибора
-    std::cout << "Средняя погрешность прибора: " << std::endl;
+    // Р’С‹С‡РёСЃР»РµРЅРёРµ СЃСЂРµРґРЅРµР№ РїРѕРіСЂРµС€РЅРѕСЃС‚Рё РїСЂРёР±РѕСЂР°
+    std::cout << "РЎСЂРµРґРЅСЏСЏ РїРѕРіСЂРµС€РЅРѕСЃС‚СЊ РїСЂРёР±РѕСЂР°: " << std::endl;
 
     std::cout << (gamma0 + (T0 / mean)) * mean << "\n";
     std::cout << std::endl;
 
-    // Вычисление погрешностей
-    std::cout << "Погрешности (грубые): " << std::endl;
+    // Р’С‹С‡РёСЃР»РµРЅРёРµ РїРѕРіСЂРµС€РЅРѕСЃС‚РµР№
+    std::cout << "РџРѕРіСЂРµС€РЅРѕСЃС‚Рё (РіСЂСѓР±С‹Рµ): " << std::endl;
 
     std::vector<double> delta_T1 = calculateDeltaT(values, gamma0, T0, mean);
     for (int i = 0; i < delta_T1.size(); i++)
@@ -128,7 +128,7 @@ int main()
 
     if (!coarse_file.is_open())
     {
-        std::cerr << "ошибка открытия файла" << std::endl;
+        std::cerr << "РѕС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°" << std::endl;
         return 1;
     }
 
@@ -144,12 +144,12 @@ int main()
     coarse_file.close();
 
     double coarse_avg = avarage(coarse_values);
-    std::cout << "Среднее значение (точные): " << coarse_avg << std::endl;
+    std::cout << "РЎСЂРµРґРЅРµРµ Р·РЅР°С‡РµРЅРёРµ (С‚РѕС‡РЅС‹Рµ): " << coarse_avg << std::endl;
 
     double gamma_T;
     std::vector<double> delta_T = calculateDeltaT(coarse_values, gamma0, T0, coarse_avg);
 
-    std::cout << "Погрешности (точные): " << std::endl;
+    std::cout << "РџРѕРіСЂРµС€РЅРѕСЃС‚Рё (С‚РѕС‡РЅС‹Рµ): " << std::endl;
 
     for (int i = 0; i < delta_T.size(); i++)
     {
@@ -157,8 +157,8 @@ int main()
     }
     std::cout << std::endl;
 
-    // Вычисление отклонений от среднего для каждого значения
-    std::cout << "Отклонения от среднего: " << std::endl;
+    // Р’С‹С‡РёСЃР»РµРЅРёРµ РѕС‚РєР»РѕРЅРµРЅРёР№ РѕС‚ СЃСЂРµРґРЅРµРіРѕ РґР»СЏ РєР°Р¶РґРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ
+    std::cout << "РћС‚РєР»РѕРЅРµРЅРёСЏ РѕС‚ СЃСЂРµРґРЅРµРіРѕ: " << std::endl;
 
     std::vector<double> rd1 = randomDeviation(coarse_values, coarse_avg);
 
@@ -168,7 +168,7 @@ int main()
     }
     std::cout << std::endl;
 
-    std::cout << "Квадрат отклонения от среднего: " << std::endl;
+    std::cout << "РљРІР°РґСЂР°С‚ РѕС‚РєР»РѕРЅРµРЅРёСЏ РѕС‚ СЃСЂРµРґРЅРµРіРѕ: " << std::endl;
 
     for (int i = 0; i < rd1.size(); i++)
     {
@@ -176,7 +176,7 @@ int main()
     }
     std::cout << std::endl;
 
-    std::cout << "Среднеквадратичное отклонение: " << std::endl;
+    std::cout << "РЎСЂРµРґРЅРµРєРІР°РґСЂР°С‚РёС‡РЅРѕРµ РѕС‚РєР»РѕРЅРµРЅРёРµ: " << std::endl;
 
     double sum = 0;
     for (int i = 0; i < rd1.size(); i++)
