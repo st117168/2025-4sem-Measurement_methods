@@ -1,0 +1,12 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Введение}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Цель работы}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Решаемые задачи}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Основная часть}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Теоретическая часть}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Эксперимент}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Обработка данных и обсуждение результатов}{4}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {}Исходный код}{4}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {}Таблицы}{6}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {}Графики}{9}{subsubsection.2.3.3}%
+\contentsline {section}{\numberline {3}Вывод}{10}{section.3}%

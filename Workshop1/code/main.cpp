@@ -56,7 +56,7 @@ int main()
     setlocale(LC_ALL, "Russian");
 
     const double gamma0 = 5e-7;
-    const double T0 = 0.1;
+    double T0 = 1e-2; // грубые
 
     std::ifstream file("rude.txt");
     std::string line;
@@ -142,6 +142,8 @@ int main()
         coarse_values.push_back(stod(linee));
     }
     coarse_file.close();
+
+    T0 = 1e-3; // точные
 
     double coarse_avg = avarage(coarse_values);
     std::cout << "Среднее значение (точные): " << coarse_avg << std::endl;
